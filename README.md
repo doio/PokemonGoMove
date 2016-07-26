@@ -2,7 +2,7 @@
 
 Merged with [PokemonMap] (https://github.com/AHAAAAAAA/PokemonGo-Map), we now have a full interactive spoofer plus map of the nearby pokemons.
 
-<img width="1072" src=https://cloud.githubusercontent.com/assets/6434237/16943599/56ad4c1a-4d51-11e6-84c0-fef003750282.png>
+<img width="1072" src=https://cloud.githubusercontent.com/assets/6434237/16967597/8d5126d4-4dbe-11e6-9c06-3c91f38a8ea2.png>
 <img width="480" src=https://cloud.githubusercontent.com/assets/6434237/16934843/3a988d10-4d0f-11e6-84e6-6dffe48a9e30.PNG>
 
 This project uses Xcode Debug mode [Simulating a Location at Runtime](https://developer.apple.com/library/ios/recipes/xcode_help-debugger/articles/simulating_locations.html) to spoof GPS locations for non-jailbroken iOS devices. This allows players of Pokemon GO to send movement commands over a computer as opposed to doing the actual walking.
@@ -23,6 +23,7 @@ The latest repo has a startup routine that sets your startup location to be your
 
 - Xcode installed (Obviously you need a Mac, an Apple Developer Account is not needed if you have iOS 9 and above)
 - Any iOS device with Pokemon GO installed
+- Google Chrome as your browser
 
 ## Installation Instructions
 
@@ -31,6 +32,7 @@ The latest repo has a startup routine that sets your startup location to be your
 ```bash
 git clone https://github.com/huacnlee/PokemonGoMove.git
 cd PokemonGoMoveAndMap/map
+sudo easy_install pip # If you do not have pip
 sudo pip install -r requirements.txt
 sudo gem install sinatra
 python example.py -a google -u [gmail_address] -p [gmail_password] -l "997 Marine Drive, San Fran, CA" -st 5 -ar 2 -dp -dg
@@ -83,7 +85,7 @@ Use Ctrl-C to stop
 ```
 
 Now in your browser go to http://localhost:3001. The default location set by the move server will be based on your IP, so it will not be very accurate. Now go ahead and enter the address, to the address you set the map originally. See screencap below:
-<img width="1072" src=https://cloud.githubusercontent.com/assets/6434237/16943599/56ad4c1a-4d51-11e6-84c0-fef003750282.png>
+<img width="1072" src=https://cloud.githubusercontent.com/assets/6434237/16967597/8d5126d4-4dbe-11e6-9c06-3c91f38a8ea2.png>
 
 Now your two servers are completely sync'd.
 
@@ -92,7 +94,24 @@ Now your two servers are completely sync'd.
 Connect your iOS device and run the project. Remember in to turn simulate location on.
 Very important: Debug->Simulate Location->PokemonLocation is checked, otherwise it will not work.
 
+For the very first time of running the project, you will need to allow add terminal to be accessible. System Preferences > Security & Privacy > Privacy > Accessibility > Terminal (checked)
+
 ### Go back to localhost:3001
 
 You can now interact with the webpage (try press left, up, right, down arrow keys on your keyboard) and the AppleScript will transmit the new GPS signal to the iOS device. Notice that the Pokemon map will also be updated but you will need to scroll to re-center the map.
 
+### Start Playing!
+- Enter an address
+- Or enter GPS coordinates
+- Press the arrow keys on the keyboard to move around
+- Or move the map on the top right corner to move around
+- Or click on the map on the top right corner to a location you want to walk to
+- Look at all the pokemons, pokestops, gyms around you on the map at the bottom right corner
+
+### Check if Pokemon Go servers are down
+
+Sometimes you are wondering if you got banned or the servers are down. Check via this [link] (http://www.mmoserverstatus.com/pokemon_go)
+
+### Other references
+- Pokemon Rarity
+  ![Rare](https://codeforx-photos.s3.amazonaws.com/08f53eda-bb36-4c52-8f9a-64cbfb3e0061_df36a6d5-cbff-47f3-a505-85dee758b400.jpeg)
